@@ -14,11 +14,13 @@ int winner(){
         }
         if(t==n-1){
             if (a[i][n-1]==1){
+                cout<<endl;
                 cout<<"win first";
                 m=1;
                 return m;
             }
             else{
+                cout<<endl;
                 cout<<"win second";
                 m=1;
                 return m;
@@ -33,11 +35,13 @@ int winner(){
         }
         if(t==n-1){
             if (a[n-1][i]==1){
+                cout<<endl;
                 cout<<"win first";
                 m=1;
                 return m;
             }
             else{
+                cout<<endl;
                 cout<<"win second";
                 m=1;
                 return m;
@@ -50,11 +54,13 @@ int winner(){
             t++;
         if(t==n-1){
             if (a[n-1][i]==1){
+                cout<<endl;
                 cout<<"win first";
                 m=1;
                 return m;
             }
             else{
+                cout<<endl;
                 cout<<"win second";
                 m=1;
                 return m;
@@ -67,11 +73,13 @@ int winner(){
             t++;
         if(t==n-1){
             if (a[n-1][i]==1){
+                cout<<endl;
                 cout<<"win first";
                 m=1;
                 return m;
             }
             else{
+                cout<<endl;
                 cout<<"win second";
                 m=1;
                 return m;
@@ -79,6 +87,7 @@ int winner(){
         }
     }
     if(k==n*n){
+        cout<<endl;
         cout<<"We have a draw";
         m=1;
         return m;
@@ -144,13 +153,25 @@ void ttt(){
         for(int i=0;  i<n; i++){
             for(int j=0;  j<n; j++){
                 if(a[i][j]==1)
-                    cout<<'X'<<' ';
+                    if(j==2)
+                        cout<<' '<<'X';
+                    else
+                        cout<<' '<<'X'<<' '<<'|';
                 if(a[i][j]==2)
-                    cout<<'0'<<' ';
+                    if(j==2)
+                        cout<<' '<<'0';
+                    else
+                        cout<<' '<<'0'<<' '<<'|';
                 if(a[i][j]==0)
-                    cout<<'_'<<' ';
+                    if(j==2)
+                        cout<<' '<<'*';
+                    else
+                        cout<<' '<<'*'<<' '<<'|';
             }
-            cout<<endl;
+            if(i!=2){
+                cout<<endl;
+                cout<<"---+---+---"<<endl;
+            }
         }
         if (winner()==1)
             return;
